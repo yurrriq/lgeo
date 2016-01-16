@@ -1,0 +1,8 @@
+{application, lgeo, [
+    {description, "lgeo - LFE/Erlang bindings for GDAL and OGR"},
+    {vsn, "0.2.0"},
+    {modules, [lgeo,ogr]},
+    {registered, []},
+    {applications, [kernel, stdlib]},
+    {env, []}
+]}.
