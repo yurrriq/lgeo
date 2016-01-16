@@ -4,3 +4,6 @@ deps
 *.beam
 *.plt
 *.swp
+ebin/*
+_build/*
+rebar.lock
