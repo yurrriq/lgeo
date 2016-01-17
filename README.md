@@ -88,7 +88,7 @@ LFE Shell V6.2 (abort with ^G)
 >
 ```
 
-Project metadata:
+Project versions:
 
 ```cl
 > (lgeo:version)
@@ -99,10 +99,17 @@ Project metadata:
  #(lutil "0.7.0")
  #(gdal/ogr "1.11.2")
  #(lgeo "0.2.0"))
-> (gdal:version)
+```
 
+GDAL metadata:
+
+```cl
+> (gdal:version)
+"1.11.2"
 > (gdal:release-date)
 "20150210"
+> (gdal:version-str)
+"GDAL 1.11.2, released 2015/02/10"
 > (gdal:format-build-info)
 PAM_ENABLED=YES
 OGR_ENABLED=YES
@@ -164,7 +171,9 @@ Old Erlang example:
 
 ## License [&#x219F;](#table-of-contents)
 
+```
 Copyright © 2012 Carlos Roman
 Copyright © 2016 Duncan McGreggor
 
 Distributed under the Apache License Version 2.0.
+```
