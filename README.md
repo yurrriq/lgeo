@@ -11,8 +11,8 @@
 
 * [Introduction](#introduction-)
 * [Installation](#installation-)
-  * [Linux/BSD](#linux-bsd-)
-  * [Windows](#windows-)
+  * [Linux/BSD](#linuxbsd-)
+  * [Windows](#on-windows-)
 * [Configuration](#configuration-)
 * [Examples](#examples-)
 * [License](#license-)
@@ -70,7 +70,7 @@ $ make
 ```
 
 
-## Configiuration [&#x219F;](#table-of-contents)
+## Configuration [&#x219F;](#table-of-contents)
 
 TBD
 
