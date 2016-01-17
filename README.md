@@ -28,7 +28,19 @@ This project is an experiment for solving GIS problems on the Erlang VM, particu
 
 It is based on the work originally done by @caroman in his [erlogr](https://github.com/caroman/erlogr) project. Unfortunately, that code base was written for Erlang R13 and hasn't been updated for 18.x (neither, it seems, does it work on 15.x). The erloger project focused entirely upon OGR, the vector part of GDAL. I'm still trying to sort out the Erlang C ports for OGR, but I have a greater interest in the raster side of things (e.g., satellite data), so I'm going to be putting most of my efforts into getting a few bits of GDAL-proper up and runnnig.
 
-The only functions from the erlogr project that were written in Erlang were NIF wrappers. In lgeo, these have been rewritten in LFE (essentially one line of code, each). Additionally, though, lgeo is providing NIF wrappers organized along the same lines as the [Python bindings](http://gdal.org/python/), and to a lesser extent, the [C++ library](http://gdal.org/1.11/annotated.html). LFE/Erlang doesn't have namespaces, though, so this is "faked" though a dotted file/module naming convention.
+The only functions from the erlogr project that were written in Erlang were NIF wrappers. In lgeo, these have been rewritten in LFE (essentially one line of code, each). Additionally, though, lgeo is providing NIF wrappers organized along the same lines as the [Python bindings](http://gdal.org/python/), and to a lesser extent, the [C++ library](http://gdal.org/1.11/annotated.html). LFE/Erlang doesn't have namespaces, though, so this is "faked" though a dotted file/module naming convention, such as ``gdal.dataset`` and functions like ``gdal.dataset:open``.
+
+There are three main "namespaces" for the lgeo project:
+
+* ``lgeo``/``lgeo.*`` - top-level modules and function that relate specifically to
+  the lgeo project
+* ``gdal``/``gdal.*`` - modules and function from GDAL (specifically, ``gdal.h``)
+  the lgeo project
+* ``ogr``/``ogr.*`` - modules and function from GDAL (specifically, ``ogr_api.h``)
+  the lgeo project
+
+Note that it may become necessary in the future to include a fourth: a namespace for
+the PROJ4 library.
 
 
 ## Installation [&#x219F;](#table-of-contents)
