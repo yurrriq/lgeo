@@ -21,6 +21,10 @@
   (is-equal (gdal:license)
             "GDAL/OGR is released under the MIT/X license.\nThe LICENSE.TXT distributed with GDAL/OGR should\ncontain additional details.\n"))
 
+(deftest release-number
+  (is-equal (gdal:release-number)
+            "1110200"))
+
 (deftest release-name
   (is-equal (gdal:release-name)
             "1.11.2"))
