@@ -50,8 +50,7 @@ $ make
 
 ## Examples
 
-Here's an example session in the erlang shell. See the src/erlogr.erl file for
-more examples.
+Here's an example session in the LFE REPL:
 
 ```bash
 $ make repl
