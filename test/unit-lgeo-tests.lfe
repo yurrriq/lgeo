@@ -19,18 +19,7 @@
               #(gdal/ogr "1.11.2")
               #(lgeo "0.2.0"))))
 
-(deftest gdal-version
-  (is-equal (lgeo:gdal-version)
-            "GDAL 1.11.2, released 2015/02/10"))
+(deftest license
+  (is-equal (lgeo:license)
+            "\nGDAL/OGR\n--------\nGDAL/OGR is released under the MIT/X license.\nThe LICENSE.TXT distributed with GDAL/OGR should\ncontain additional details.\n\n\nlgeo\n----\nApache License, Version 2.0\n\n"))
 
-(deftest release-name
-  (is-equal (lgeo:release-name)
-            "1.11.2"))
-
-(deftest release-date
-  (is-equal (lgeo:release-date)
-            "20150210"))
-
-(deftest build-info
-  (is-equal (lgeo:build-info)
-            "PAM_ENABLED=YES\nOGR_ENABLED=YES\n"))

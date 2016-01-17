@@ -72,13 +72,15 @@ Project metadata:
  #(lutil "0.7.0")
  #(gdal/ogr "1.11.2")
  #(lgeo "0.2.0"))
-> (lgeo:release-date)
+> (gdal:version)
+
+> (gdal:release-date)
 "20150210"
-> (lgeo:format-build-info)
+> (gdal:format-build-info)
 PAM_ENABLED=YES
 OGR_ENABLED=YES
 ok
-> (lgeo:format-license)
+> (gdal:format-license)
 
 GDAL/OGR
 --------
