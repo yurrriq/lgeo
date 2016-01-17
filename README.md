@@ -1,17 +1,39 @@
 # lgeo
 
+[![][lgeo-logo]][lgeo-logo-large]
+
+[lgeo-logo]: resources/images/lgeo-250x.png
+[lgeo-logo-large]: resources/images/lgeo-1000x.png
+
 *LFE/Erlang GIS Bindings for GDAL/OGR*
+
+#### Table of Contents
+
+* [Introduction](#introduction-)
+* [Installation](#installation-)
+  * [Linux/BSD](#linuxbsd-)
+  * [Windows](#on-windows-)
+* [Configuration](#configuration-)
+* [Examples](#examples-)
+* [License](#license-)
+
 
 **NOTICE**: Work in progress; partial OGR support; no GDAL support
 
 
-## Introduction
+## Introduction [&#x219F;](#table-of-contents)
 
-TBD
+This project is an experiment for solving GIS problems on the Erlang VM, particularly, doing so in LFE.
+
+It is based on the work originally done by @caroman in his [erlogr](https://github.com/caroman/erlogr) project. Unfortunately, that code base was written for Erlang R13 and hasn't been updated for 18.x (neither, it seems, does it work on 15.x). The erloger project focused entirely upon OGR, the vector part of GDAL. I'm still trying to sort out the Erlang C ports for OGR, but I have a greater interest in the raster side of things (e.g., satellite data), so I'm going to be putting most of my efforts into getting a few bits of GDAL-proper up and runnnig.
+
+The only functions from the erlogr project that were written in Erlang were NIF wrappers. In lgeo, these have been rewritten in LFE (essentially one line of code, each). Additionally, though, lgeo is providing NIF wrappers organized along the same lines as the [Python bindings](http://gdal.org/python/), and to a lesser extent, the [C++ library](http://gdal.org/1.11/annotated.html). LFE/Erlang doesn't have namespaces, though, so this is "faked" though a dotted file/module naming convention.
 
 
-## Install
+## Installation [&#x219F;](#table-of-contents)
 
+
+### Linux/BSD [&#x219F;](#table-of-contents)
 
 Build it with:
 
@@ -26,7 +48,7 @@ $ make check
 ```
 
 
-### On Windows
+### On Windows [&#x219F;](#table-of-contents)
 
 You need to have GDAL installed, let's say it was installed to `C:\cygwin\opt\gdal`.
 
@@ -48,7 +70,12 @@ $ make
 ```
 
 
-## Examples
+## Configuration [&#x219F;](#table-of-contents)
+
+TBD
+
+
+## Examples [&#x219F;](#table-of-contents)
 
 Here's an example session in the LFE REPL:
 
@@ -127,3 +154,17 @@ Old Erlang example:
     <<1,3,0,0,0,1,0,0,0,6,0,0,0,136,181,111,88,251,134,214,63,
       72,23,93,116,209,5,239,191,...>>
 ```
+
+
+## Documentation [&#x219F;](#table-of-contents)
+
+* [API docs]()
+* [Usage docs]()
+
+
+## License [&#x219F;](#table-of-contents)
+
+Copyright © 2012 Carlos Roman
+Copyright © 2016 Duncan McGreggor
+
+Distributed under the Apache License Version 2.0.
