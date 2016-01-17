@@ -1159,7 +1159,6 @@ static ErlNifFunc nif_funcs[] =
     {"l_reset_reading", 1, l_reset_reading},
     {"get_driver_by_name", 1, get_driver_by_name},
     {"get_driver", 1, get_driver},
-    {"get_version_info", 1, get_version_info},
     {"open", 1, open},
     {"open", 2, open}
 };
