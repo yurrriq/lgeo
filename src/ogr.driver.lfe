@@ -3,7 +3,7 @@
 
 (defun open (filename)
   "Attempt to open the given file."
-  (lgeo:open filename))
+  (lgeo_ogr:open filename))
 
 (defun open
   "Attempt to open the given file.
@@ -31,4 +31,4 @@
   (lgeo_ogr:get_driver_by_name name))
 
 (defun get-name (driver)
-  (lgeo_ogr:get_driver_name driver))
+  (lgeo_ogr:dr_get_name driver))
