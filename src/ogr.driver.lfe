@@ -14,9 +14,9 @@
   This function is the same as the C++ method OGRSFDriver::Open().
   "
   ((filename 'false)
-    (lgeo:open filename 0))
+    (lgeo_ogr:open filename 0))
   ((filename 'true)
-    (lgeo:open filename 1)))
+    (lgeo_ogr:open filename 1)))
 
 (defun get
   ((idx) (when (is_integer idx))
@@ -25,7 +25,10 @@
     (get-by-name name)))
 
 (defun get-by-index (idx)
-  (lgeo:get_driver idx))
+  (lgeo_ogr:get_driver idx))
 
 (defun get-by-name (name)
-  (lgeo:get_driver_by_name name))
+  (lgeo_ogr:get_driver_by_name name))
+
+(defun get-name (driver)
+  (lgeo_ogr:get_driver_name driver))
