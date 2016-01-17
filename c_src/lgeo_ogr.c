@@ -168,38 +168,6 @@ unload(ErlNifEnv* env, void* priv_data)
 
 /************************************************************************
  *
- *  GDALVersionInfo
- *
- ***********************************************************************/
-
-static ERL_NIF_TERM
-get_version_info(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
-{
-    char *psz_request;
-    ERL_NIF_TERM eterm;
-
-    if (argc != 1) {
-        return enif_make_badarg(env);
-    }
-
-    unsigned len;
-    if (!enif_get_list_length(env, argv[0], &len)){
-        return enif_make_badarg(env);
-    }
-    psz_request = malloc(sizeof(char)*(len+1));
-
-    if(!enif_get_string(env, argv[0], psz_request, len+1, ERL_NIF_LATIN1)) {
-        return enif_make_badarg(env);
-    }
-
-    const char *version_info = GDALVersionInfo(psz_request);
-    eterm = enif_make_string(env, version_info, ERL_NIF_LATIN1);
-    free(psz_request);
-    return enif_make_tuple2(env, enif_make_atom(env, "ok"), eterm);
-}
-
-/************************************************************************
- *
  *  OGRGeometry
  *
  ***********************************************************************/
