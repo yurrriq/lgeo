@@ -22,6 +22,32 @@
   (let ((so-lib (lgeo-util:get-so-file (MODULE))))
     (catch (erlang:load_nif so-lib 0))))
 
+;;; Wrapper functions
+
+(defun version ()
+  (case (get_version_info "RELEASE_NAME")
+    (`#(ok ,version)
+      version)
+    (err err)))
+
+(defun license ()
+  (case (get_version_info "LICENSE")
+    (`#(ok ,license)
+      license)
+    (err err)))
+
+(defun release-date ()
+  (case (get_version_info "RELEASE_DATE")
+    (`#(ok ,date)
+      date)
+    (err err)))
+
+(defun build-info ()
+  (case (get_version_info "RELEASE_DATE")
+    (`#(ok ,date)
+      date)
+    (err err)))
+
 ;;; NIF functions
 
 ;; XXX setup alias in separate module
