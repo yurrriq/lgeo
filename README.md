@@ -15,6 +15,7 @@
   * [Windows](#on-windows-)
 * [Configuration](#configuration-)
 * [Examples](#examples-)
+* [Documentation](#documentation-)
 * [License](#license-)
 
 
@@ -76,6 +77,8 @@ TBD
 
 
 ## Examples [&#x219F;](#table-of-contents)
+
+For more examples and API docs, see the [Documentation](#documentation-).
 
 Here's an example session in the LFE REPL:
 
