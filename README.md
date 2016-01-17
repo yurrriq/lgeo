@@ -98,7 +98,7 @@ Project versions:
  #(lfe "0.10.1")
  #(lutil "0.7.0")
  #(gdal/ogr "1.11.2")
- #(lgeo "0.2.0"))
+ #(lgeo "0.2.0-dev"))
 ```
 
 GDAL metadata:
