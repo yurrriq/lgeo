@@ -1,6 +1,6 @@
 # lgeo
 
-*Bindings for GDAL/OGR in LFE/Erlang*
+*LFE/Erlang GIS Bindings for GDAL/OGR*
 
 **NOTICE**: Work in progress; partial OGR support; no GDAL support
 
@@ -26,7 +26,7 @@ $ make check
 ```
 
 
-## On Windows
+### On Windows
 
 You need to have GDAL installed, let's say it was installed to `C:\cygwin\opt\gdal`.
 
@@ -62,10 +62,45 @@ LFE Shell V6.2 (abort with ^G)
 >
 ```
 
-```cl
-> (set driver (lgeo:get_driver 0))
+Project metadata:
 
-> (lgeo:dr_get_name driver)
+```cl
+> (lgeo:version)
+(#(erlang "18")
+ #(emulator "7.1")
+ #(driver-version "3.2")
+ #(lfe "0.10.1")
+ #(lutil "0.7.0") .
+ #(gdal/ogr "1.11.2")
+ #(lgeo "0.2.0"))
+> (lgeo:release-date)
+"20150210"
+> (lgeo:format-build-info)
+PAM_ENABLED=YES
+OGR_ENABLED=YES
+ok
+> (lgeo:format-license)
+
+GDAL/OGR
+--------
+GDAL/OGR is released under the MIT/X license.
+The LICENSE.TXT distributed with GDAL/OGR should
+contain additional details.
+
+
+lgeo
+----
+Apache License, Version 2.0
+
+ok
+```
+
+OGR operations:
+
+```cl
+> (set driver (ogr.driver:get 0))
+
+> (ogr.driver:get-name driver)
 
 ```
 
@@ -90,4 +125,4 @@ Old Erlang example:
     4> Wkb = erlogr:g_export_to_wkb(Geometry).
     <<1,3,0,0,0,1,0,0,0,6,0,0,0,136,181,111,88,251,134,214,63,
       72,23,93,116,209,5,239,191,...>>
-
+```
