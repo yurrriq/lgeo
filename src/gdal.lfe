@@ -1,6 +1,14 @@
 (defmodule gdal
   (export all))
 
+;;; Convenience Aliases
+
+(defun open (filename)
+  (gdal.dataset:open filename))
+
+(defun open (filename access)
+  (gdal.dataset:open filename access))
+
 ;;; Version Info
 
 (defun version ()
