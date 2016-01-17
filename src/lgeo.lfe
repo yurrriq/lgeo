@@ -12,6 +12,12 @@
             #(lgeo ,(lcfg-proj:get-version)))))
     (err err)))
 
+(defun gdal-version ()
+  (case (lgeo_gdal:get_version_info "--version")
+    (`#(ok ,version)
+      version)
+    (err err)))
+
 (defun license ()
   (case (lgeo_gdal:get_version_info "LICENSE")
     (`#(ok ,license)
@@ -21,6 +27,12 @@
           ;;     lcfg-proj:get-license function ...
           (lcfg:get-in (lcfg-proj:get-project-config) '(meta license name))
           "\n\n"))
+    (err err)))
+
+(defun release-name ()
+  (case (lgeo_gdal:get_version_info "RELEASE_NAME")
+    (`#(ok ,name)
+      name)
     (err err)))
 
 (defun release-date ()
